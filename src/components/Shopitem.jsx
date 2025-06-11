@@ -50,7 +50,7 @@ const Shopitem = ({
               className="flex py-1.5 px-5 bg-rose-50 border-2 border-rose-500 rounded-4xl items-center gap-2 hover:bg-rose-100 transition-colors duration-300 hover:border-red hover:text-red"
               onClick={() => toCart(id, 1)}
             >
-              <img src="src/assets/images/icon-add-to-cart.svg" alt="" />
+              <img src="/assets/images/icon-add-to-cart.svg" alt="" />
               Add to Cart
             </button>
           ) : (
@@ -59,20 +59,14 @@ const Shopitem = ({
                 className="flex items-center justify-center w-4 h-4 rounded-full border border-rose-50 cursor-pointer"
                 onClick={() => onDecrease(id, 1)}
               >
-                <img
-                  src="src/assets/images/icon-decrement-quantity.svg"
-                  alt=""
-                />
+                <img src="/assets/images/icon-decrement-quantity.svg" alt="" />
               </button>
               <span className="text-rose-50 font-2">{quantity}</span>
               <button
                 className="flex items-center justify-center w-4 h-4 rounded-full border border-rose-50 cursor-pointer"
                 onClick={() => onIncrease(id, 1)}
               >
-                <img
-                  src="src/assets/images/icon-increment-quantity.svg"
-                  alt=""
-                />
+                <img src="/assets/images/icon-increment-quantity.svg" alt="" />
               </button>
             </div>
           )}
