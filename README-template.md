@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Github Repo](https://github.com/Jamieeee1/Shopping-Cart)
+- Live Site URL: [Live Site](https://shopping-cart-one-puce.vercel.app/)
 
 ## My process
 

@@ -17,7 +17,7 @@ const Cart = ({ cartItems, resetButton, resetAll }) => {
         {Object.keys(cartItems).length === 0 ? (
           <>
             <img
-              src="src\assets\images\illustration-empty-cart.svg"
+              src="/assets/images/illustration-empty-cart.svg"
               alt="Empty Cart"
             />
             <h3 className="text-rose-500">Your added items will appear here</h3>
