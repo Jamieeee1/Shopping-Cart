@@ -71,7 +71,7 @@ const Cart = ({ cartItems, resetButton, resetAll }) => {
                   <p className="flex justify-center items-center gap-2 text-rose-500 p-2.5 rounded-md bg-rose-100  ">
                     <span>
                       <img
-                        src="src/assets/images/icon-carbon-neutral.svg"
+                        src="/assets/images/icon-carbon-neutral.svg"
                         alt=""
                         srcset=""
                       />
@@ -112,7 +112,7 @@ const Cart = ({ cartItems, resetButton, resetAll }) => {
             }}
           >
             <p>
-              <img src="src/assets/images/icon-order-confirmed.svg" alt="" />
+              <img src="/assets/images/icon-order-confirmed.svg" alt="" />
             </p>
             <h2 className="text-2xl font-bold mb-4 text-center">
               Order Confirmed
