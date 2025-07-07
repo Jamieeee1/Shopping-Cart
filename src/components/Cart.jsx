@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { CartContext } from "../App";
 import { FaXmark } from "react-icons/fa6";
 
-const Cart = ({ cartItems, resetButton, resetAll }) => {
+const Cart = () => {
+  const { cartItems, resetItem, resetAllItems } = useContext(CartContext);
   const [showSummary, setShowSummary] = useState(false);
   const handleCloseSummary = () => {
     setShowSummary(false);
-    resetAll();
+    resetAllItems();
   };
   return (
     <>
@@ -47,7 +49,7 @@ const Cart = ({ cartItems, resetButton, resetAll }) => {
                   <span className="flex items-center gap-2 border p-0.5 rounded-full cursor-pointer">
                     <FaXmark
                       onClick={() => {
-                        resetButton(itemDetails.id);
+                        resetItem(itemDetails.id);
                       }}
                     />
                   </span>

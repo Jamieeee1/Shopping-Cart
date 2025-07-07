@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, createContext } from "react";
 import ShoppingItems from "./components/ShoppingItems";
 import Cart from "./components/Cart";
 
@@ -131,7 +131,9 @@ const initialItems = [
   },
 ];
 
-const App = () => {
+export const CartContext = createContext();
+
+const ContextProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState({});
   const [items, setItems] = useState(initialItems);
 
@@ -211,24 +213,63 @@ const App = () => {
   };
 
   return (
+    <CartContext.Provider
+      value={{
+        cartItems,
+        items,
+        addToCart,
+        resetItem,
+        resetAllItems,
+        increaseQuantity,
+        decreaseQuantity,
+      }}
+    >
+      {children}
+    </CartContext.Provider>
+  );
+};
+
+const App = () => {
+  return (
     <>
       <h1 className="text-rose-500 font-3 text-4xl m-2 p-2.5">Desserts</h1>
       <div className="flex flex-col md:flex-row gap-4 justify-between items-start lg:px-8 py-3">
-        <ShoppingItems
-          itemdata={items}
-          addToCart={addToCart}
-          increment={increaseQuantity}
-          decrement={decreaseQuantity}
-        />
-
-        <Cart
-          cartItems={cartItems}
-          resetButton={resetItem}
-          resetAll={resetAllItems}
-        />
+        <ShoppingItems />
+        <Cart />
       </div>
     </>
   );
 };
 
-export default App;
+class App2 extends React.Component {
+  render() {
+    return (
+      <ContextProvider>
+        <App />
+      </ContextProvider>
+    );
+  }
+}
+
+// const App2 = () => {
+//   return (
+//     <ContextProvider>
+//       <App />
+//     </ContextProvider>
+//   );
+// };
+
+export default App2;
+
+// <ShoppingItems
+//   itemdata={items}
+//   addToCart={addToCart}
+//   increment={increaseQuantity}
+//   decrement={decreaseQuantity}
+// />
+
+// <Cart
+//   cartItems={cartItems}
+//   resetButton={resetItem}
+//   resetAll={resetAllItems}
+// />
